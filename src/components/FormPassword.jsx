@@ -115,6 +115,8 @@ const FormPassword = () => {
     }
 
     setPassword(createPassword(characterList));
+
+
   }
 
   const createPassword = (characterList) => {
@@ -129,13 +131,17 @@ const FormPassword = () => {
     return password;
   }
 
+  const copyInput = () => {
+    navigator.clipboard.writeText(password)
+  }
+
   return (
     <Container>
       <Box>
         <h3>Generador de contraseñas</h3>
         <div className="input">
           <input type="text" name="password" defaultValue={password} />
-          <button>Copiar</button>
+          <button onClick={copyInput}>Copiar</button>
         </div>
         <div className="inputCheckbox">
           <div>
